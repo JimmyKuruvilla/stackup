@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 private
 
   def send_email
+    Question.get_questions
     UserMailer.daily_email(self).deliver
   end
 
