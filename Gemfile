@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.1.2'
 gem 'dotenv-rails'
 gem 'mail'
 # Bundle edge Rails insqtead: gem 'rails', github: 'rails/rails'
