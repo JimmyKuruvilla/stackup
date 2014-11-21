@@ -5,4 +5,9 @@ class UserMailer < ActionMailer::Base
       @question=Question.first
       mail(to: @user.email, subject: 'Your Daily Question from StackUp')
     end
+
+    def cron_worked
+      mail(to: "jimmyjk@gmail.com", subject: 'cron worked!')
+    end
+
 end
