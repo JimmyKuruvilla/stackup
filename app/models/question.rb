@@ -1,10 +1,20 @@
 require 'net/http'
 class Question < ActiveRecord::Base
   validates_uniqueness_of :url
-  has_many :users
+  has_many :user_questions, dependent: :destroy
+  has_many :users, through: :user_questions
 
   def self.find_difficulty(question)#question is an item from the JSON data below
     1#this is where the logic for sorting questions by difficulty will go 
+  end
+
+  def self.pick_question(user)
+    Question.all.each do |question|
+      if !(user.questions.include?(question.id))
+        return question
+      end
+    end
+    return Question.last#if all questions have been seen, return this
   end
 
   def self.get_questions

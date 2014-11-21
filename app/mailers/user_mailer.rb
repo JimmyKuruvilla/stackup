@@ -2,7 +2,8 @@ class UserMailer < ActionMailer::Base
   default from: 'stackupemail@gmail.com'
     def send_daily_email(user)
       @user = user
-      @question=Question.first
+      @question=Question.pick_question(user)#Question.first
+      @user.questions<<@question
       mail(to: @user.email, subject: 'Your Daily Question from StackUp')
     end
 
@@ -11,5 +12,6 @@ class UserMailer < ActionMailer::Base
       #pass question variables for html view
       mail(to: @user.email, subject: 'Welcome to StackUp!')
     end
+
 
 end
