@@ -1,6 +1,10 @@
 require 'net/http'
 class Question < ActiveRecord::Base
-  validates_uniqueness_of :url #
+  validates_uniqueness_of :url
+
+  def self.find_difficulty(hash)
+    1
+  end
 
   def self.get_questions
     path="questions/no-answers"
@@ -21,7 +25,8 @@ class Question < ActiveRecord::Base
     data= JSON.parse(response)
 
     data["items"].each do |question|
-      self.create(title: question["title"], url: question["link"], body_html: question["body"], body_md: question["body_markdown"])      
+      self.create(title: question["title"], url: question["link"], body_html: question["body"], body_md: question["body_markdown"], difficulty: find_difficulty(question))
+      #we will modify this create statement to assign a difficulty using a helper method that examines question attributes
     end
      
     # user_requested_tags=["ruby", "html", "css", "javascript", "sql", "ruby-on-rails", "activerecord", "jQuery", "regex", "scrape"]
