@@ -1,9 +1,10 @@
 require 'net/http'
 class Question < ActiveRecord::Base
   validates_uniqueness_of :url
+  has_many :users
 
-  def self.find_difficulty(hash)
-    1
+  def self.find_difficulty(question)#question is an item from the JSON data below
+    1#this is where the logic for sorting questions by difficulty will go 
   end
 
   def self.get_questions

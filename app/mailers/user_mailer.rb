@@ -1,13 +1,15 @@
 class UserMailer < ActionMailer::Base
   default from: 'stackupemail@gmail.com'
-    def daily_email(user)
+    def send_daily_email(user)
       @user = user
       @question=Question.first
       mail(to: @user.email, subject: 'Your Daily Question from StackUp')
     end
 
-    def cron_worked
-      mail(to: "jimmyjk@gmail.com", subject: 'cron worked!')
+    def send_welcome_email(user)
+      @user = user
+      #pass question variables for html view
+      mail(to: @user.email, subject: 'Welcome to StackUp!')
     end
 
 end
