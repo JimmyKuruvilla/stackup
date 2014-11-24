@@ -1,9 +1,7 @@
+<h2>Welcome to the StackUP signUP page! </h2>
   <%= form_for @user do |f| %><br>
-    Your email: <%= f.text_field :email %><br>
-    <%= f.label :email %><br>
+    Your email: <%= f.text_field :email, placeholder: " ", autofocus: true %>
+    <br>
+    <br>
   
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
 <% end %>

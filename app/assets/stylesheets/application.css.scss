@@ -22,6 +22,11 @@
 body {
   padding-top: 70px;
   padding-bottom: 30px;
+  background-color: #000;
+}
+
+header {
+  
 }
 
 .theme-dropdown .dropdown-menu {
@@ -33,3 +38,36 @@ body {
 .theme-showcase > p > .btn {
   margin: 5px 0;
 }
+
+p, form, .notice {
+  font-family: Courier;
+  color: #0DFF00;
+  font-weight: light;
+  padding-left: 5%;
+}
+
+h2 {
+  font-family: Courier;
+  font-size: 1.5em;
+  color: #444;
+  padding: 5% 5%;
+}
+
+.flashing_cursor {
+  font-size: 10px;
+  font-weight: bolder;
+  color: #0DFF00;
+}
+
+input[type="text"]{
+  background-color: #000;
+}
+
+textarea:focus, input:focus {
+    border-color: #000;
+   outline: 0;
+   width: 80%;
+}
+
+
+
