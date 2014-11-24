@@ -4,13 +4,20 @@ class Question < ActiveRecord::Base
   has_many :user_questions, dependent: :destroy
   has_many :users, through: :user_questions
 
-  def self.find_difficulty(question)#question is an item from the JSON data below
-    1#this is where the logic for sorting questions by difficulty will go 
+  def self.find_difficulty(question)
+    owner_reputation = question["owner"]["reputation"]
+    owner_accept_rate = question["owner"]["accept_rate"]
+    if owner_reputation < 10 && owner_accept_rate == nil
+      1
+    else
+      10
+    end
   end
 
   def self.pick_question(user)
     Question.all.each do |question|
-      if !(user.questions.include?(question.id))
+      #eventually update to assign questions as uniquely as possible to different users
+      if !(user.questions.include?(question.id)) && question.difficulty == 1
         return question
       end
     end
@@ -36,12 +43,8 @@ class Question < ActiveRecord::Base
     data= JSON.parse(response)
 
     data["items"].each do |question|
-      self.create(title: question["title"], url: question["link"], body_html: question["body"], body_md: question["body_markdown"], difficulty: find_difficulty(question))
-      #we will modify this create statement to assign a difficulty using a helper method that examines question attributes
+      self.create(title: question["title"], url: question["link"], body_html: question["body"], body_md: question["body_markdown"], view_count: question["view_count"], owner_id: question["owner"]["user_id"], owner_reputation: question["owner"]["reputation"], owner_accept_rate: question["owner"]["accept_rate"], difficulty: find_difficulty(question))
     end
-     
-    # user_requested_tags=["ruby", "html", "css", "javascript", "sql", "ruby-on-rails", "activerecord", "jQuery", "regex", "scrape"]
-
   end
 
 end
