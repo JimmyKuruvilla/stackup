@@ -2,9 +2,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to root_path
+    flash[:notice] = "You were successfully created"
+    redirect_to @user
   end
 
+  def show
+   @user = User.find(params[:id])
+  end
+
+  def index
+  end
 
  private
 
