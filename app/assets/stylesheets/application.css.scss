@@ -44,6 +44,7 @@ p, form, .notice {
   color: #0DFF00;
   font-weight: light;
   padding-left: 5%;
+  display: inline-block;
 }
 
 h2 {
@@ -54,19 +55,21 @@ h2 {
 }
 
 .flashing_cursor {
-  font-size: 10px;
+  font-size: 1em;
   font-weight: bolder;
   color: #0DFF00;
 }
 
 input[type="text"]{
   background-color: #000;
+  display: inline-block;
 }
 
 textarea:focus, input:focus {
-    border-color: #000;
-   outline: 0;
-   width: 80%;
+  border-color: #000;
+  outline: 0;
+  width: 50%;
+  display: inline-block;
 }
 
 
