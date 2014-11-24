@@ -1,6 +1,9 @@
 require 'net/http'
+require 'open-uri'
+require 'pry'
+
 class Question < ActiveRecord::Base
-  validates_uniqueness_of :url
+  validates_uniqueness_of :so_id
   has_many :user_questions, dependent: :destroy
   has_many :users, through: :user_questions
 
@@ -43,8 +46,45 @@ class Question < ActiveRecord::Base
     data= JSON.parse(response)
 
     data["items"].each do |question|
-      self.create(title: question["title"], url: question["link"], body_html: question["body"], body_md: question["body_markdown"], view_count: question["view_count"], owner_id: question["owner"]["user_id"], owner_reputation: question["owner"]["reputation"], owner_accept_rate: question["owner"]["accept_rate"], difficulty: find_difficulty(question))
+      self.create(title: question["title"], url: question["link"], body_html: question["body"], body_md: question["body_markdown"], view_count: question["view_count"], owner_id: question["owner"]["user_id"], owner_reputation: question["owner"]["reputation"], owner_accept_rate: question["owner"]["accept_rate"], so_id: question["question_id"], difficulty: find_difficulty(question))
     end
+  end
+
+  def self.delete_answered_questions
+
+    so_ids = []
+    urls = []
+    so_ids_str = ""
+    
+    Question.all.each do |question|
+      so_ids << question.so_id
+    end
+
+    so_ids.each_with_index do |so_id, index|
+      if index != 0 && index % 100 == 0
+        urls << "https://api.stackexchange.com/2.2/questions/#{so_ids_str[0..-4]}?order=desc&sort=activity&site=stackoverflow"
+        so_ids_str = ""
+        so_ids_str << "#{so_id}%3B"
+      else
+        so_ids_str << "#{so_id}%3B"
+      end
+    end
+
+    if so_ids_str != ""
+      urls << "https://api.stackexchange.com/2.2/questions/#{so_ids_str[0..-4]}?order=desc&sort=activity&site=stackoverflow"
+    end
+
+    urls.each do |url|
+      response = open(url).read
+      data = JSON.parse(response)
+      data["items"].each do |question|
+        if question["is_answered"]
+          current_record = Question.find_by(so_id: question["question_id"].to_s)
+          current_record.destroy
+        end
+      end
+    end
+
   end
 
 end
