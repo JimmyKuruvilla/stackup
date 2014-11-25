@@ -1,8 +1,10 @@
-<p>Welcome to stackUP, a free service that sends unanswered Ruby questions from Stack Overflow to your inbox every day. Sign up below.
- </p>
+
+  <h1>Coder Cred Made Easy.</h1>
+              <p>Receive unanswered Ruby questions from Stack Overflow in your inbox every day.</p>
+  <title>StackUp</title>
+
   <%= form_for @user do |f| %><br>
-    $ Please enter your email: <%= f.text_field :email, placeholder: " ", autofocus: true %>
-    <br>
-    <br>
-  
-<% end %>
+    Please enter your email:<br>
+     <%= f.text_field :email, placeholder: " ", autofocus: true %>
+    <% end %>
+

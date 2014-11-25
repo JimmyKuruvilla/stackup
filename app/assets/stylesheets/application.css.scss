@@ -10,67 +10,17 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+ *= require bootstrap
+ *= require bootstrap.min
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.svg"
+ *= require_tree .
+
  */
+/*  *= require_self*/
+
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
-body {
-  padding-top: 70px;
-  padding-bottom: 30px;
-  background-color: #000;
-}
-
-header {
-  
-}
-
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.theme-showcase > p > .btn {
-  margin: 5px 0;
-}
-
-p, form, .notice {
-  font-family: Courier;
-  color: #0DFF00;
-  font-weight: light;
-  padding-left: 5%;
-  display: inline-block;
-}
-
-h2 {
-  font-family: Courier;
-  font-size: 1.5em;
-  color: #444;
-  padding: 5% 5%;
-}
-
-.flashing_cursor {
-  font-size: 1em;
-  font-weight: bolder;
-  color: #0DFF00;
-}
-
-input[type="text"]{
-  background-color: #000;
-  display: inline-block;
-}
-
-textarea:focus, input:focus {
-  border-color: #000;
-  outline: 0;
-  width: 50%;
-  display: inline-block;
-}
-
-
-
