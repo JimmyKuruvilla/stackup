@@ -11,6 +11,8 @@ html {
       -ms-text-size-adjust: 100%;
 }
 
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,300,200);
+
 body {
   margin: 0;
 }
@@ -271,9 +273,22 @@ th {
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
-
+.lighter-text {
+  color: #666;
+  font-weight: lighter;
+}
 .extra-top {
   padding-top: 5%;
+}
+
+.logo-stack-font {
+  font-family: Raleway;
+  font-weight: light;
+}
+
+.logo-up-font {
+  font-family: Raleway;
+  font-weight: bolder;
 }
 .glyphicon {
   position: relative;
@@ -1235,7 +1250,7 @@ ol ol {
   margin-bottom: 0;
 }
 .list-unstyled {
-  padding-left: 0;
+  padding-left: 5%;
   list-style: none;
 }
 .list-inline {
@@ -4689,31 +4704,58 @@ a.list-group-item.active > .badge,
     font-size: 63px;
   }
 }
+.thumbnails {
+  margin-left:-20px;
+  list-style:none;
+*zoom:1
+}
+.thumbnails:before, .thumbnails:after {
+  display:inline-block;
+  line-height:0;
+  content:""
+}
+.thumbnails:after {
+  clear:both
+}
+.row-fluid .thumbnails {
+  margin-left:0
+}
+.thumbnails>li {
+  float:left;
+  margin-bottom:20px;
+  margin-left:20px
+}
 .thumbnail {
-  display: block;
-  padding: 4px;
-  margin-bottom: 20px;
-  line-height: 1.42857143;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  -webkit-transition: border .2s ease-in-out;
-       -o-transition: border .2s ease-in-out;
-          transition: border .2s ease-in-out;
+  display: inline-block;
+  padding:4px;
+  line-height:20px;
+  border:1px solid #ddd;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.055);
+  -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.055);
+  box-shadow:0 1px 3px rgba(0, 0, 0, 0.055);
+-webkit-transition:all .2s ease-in-out;
+-moz-transition:all .2s ease-in-out;
+-o-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out
 }
-.thumbnail > img,
-.thumbnail a > img {
-  margin-right: auto;
-  margin-left: auto;
+a.thumbnail:hover {
+  border-color:#08c;
+  -webkit-box-shadow:0 1px 4px rgba(0, 105, 214, 0.25);
+  -moz-box-shadow:0 1px 4px rgba(0, 105, 214, 0.25);
+  box-shadow:0 1px 4px rgba(0, 105, 214, 0.25)
 }
-a.thumbnail:hover,
-a.thumbnail:focus,
-a.thumbnail.active {
-  border-color: #428bca;
+.thumbnail>img {
+  display: inline-block;
+  max-width:100%;
+  margin-right:auto;
+  margin-left:auto
 }
 .thumbnail .caption {
-  padding: 9px;
-  color: #333;
+  padding:9px;
+  color:#555
 }
 .alert {
   padding: 15px;
@@ -5517,6 +5559,21 @@ button.close {
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }
+
+.span4-left {
+  display: inline-block;
+  float: left;
+  width: 25%;
+  border: 1px solid #555;
+  margin: 3%;
+}
+
+.span4-left p {
+  width: 95%;
+  text-align: center;
+  padding: 5%;
+}
+
 .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform .3s ease-out;
        -o-transition:      -o-transform .3s ease-out;
