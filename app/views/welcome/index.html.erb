@@ -3,6 +3,9 @@
 <title>StackUp</title>
 
 <%= form_for @user do |f| %><br>
-  Please enter your email:<br>
-   <%= f.text_field :email, placeholder: " ", autofocus: true %>
-  <% end %>
+  Please enter your email address:<br>
+   <%= f.text_field :email, placeholder: "username@example.com", autofocus: true %>
+   <%= f.submit "Submit" %>
+<% end %>
+<br>
+Alternatively, feel free to <%= button_to "Spam Our Users", action: "send_daily_emails" %>

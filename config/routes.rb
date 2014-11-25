@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  post 'welcome/send_daily_emails' => 'welcome#send_daily_emails'
+
   # Example of regular route:
   #   get 'users/:id' => 'catalog#view'
 
