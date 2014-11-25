@@ -2,8 +2,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    flash[:notice] = "You were successfully created."
-    redirect_to @user
+    if User.find_by(email: @user.email)
+      flash[:notice] = "You were successfully created."
+      redirect_to @user
+    else
+      flash[:notice] = @user.errors.messages[:email][0]
+      redirect_to root_path
+    end
   end
 
   def show

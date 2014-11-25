@@ -1,6 +1,2 @@
- <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
-
-<p>Welcome to StackUP <%= @user.email.split("@")[0] %> </p>
-<p>You can expect your first StackUP email to appear within 24 hours<p>
+<p>Welcome to StackUp, <%= @user.email.split("@")[0] %>! </p>
+<p>You can expect your first StackUp email to appear within a day.<p>
