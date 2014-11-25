@@ -1,6 +1,6 @@
 require 'net/http'
 require 'open-uri'
-require 'pry'
+
 
 class Question < ActiveRecord::Base
   validates_uniqueness_of :so_id
