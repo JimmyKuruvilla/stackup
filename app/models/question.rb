@@ -1,7 +1,3 @@
-require 'net/http'
-require 'open-uri'
-
-
 class Question < ActiveRecord::Base
   validates_uniqueness_of :so_id
   has_many :user_questions, dependent: :destroy
