@@ -14,13 +14,17 @@ class Question < ActiveRecord::Base
   end
 
   def self.pick_question(user)
+    questions_to_send = []
     Question.all.each do |question|
-      #eventually update to assign questions as uniquely as possible to different users
       if !(user.questions.include?(question.id)) && question.difficulty == 1
-        return question
+        questions_to_send << question
       end
     end
-    return Question.last#if all questions have been seen, return this
+    if questions_to_send.empty?
+      Question.first
+    else
+      questions_to_send.sample
+    end
   end
 
   def self.get_questions
