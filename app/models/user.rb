@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :questions, through: :user_questions
   
   def self.create_with_omniauth(auth)
+    puts auth
+    raise auth.inpsect
     User.create(uid: auth["uid"], name: auth["info"]["name"], email: auth["info"]["email"])
   end
 
