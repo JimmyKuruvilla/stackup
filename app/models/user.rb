@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   
   def self.create_with_omniauth(auth)
     puts auth
-    raise auth.inpsect
     User.create(uid: auth["uid"], name: auth["info"]["name"], email: auth["info"]["email"])
   end
 
