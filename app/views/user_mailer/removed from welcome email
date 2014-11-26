@@ -1,0 +1,2 @@
+removed from welcome email
+<p>Welcome to StackUP <%= @user.email.split("@")[0] %> </p>

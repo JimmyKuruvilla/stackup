@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,7 +9,17 @@ Rails.application.routes.draw do
   resources :users
 
   post 'welcome/send_daily_emails' => 'welcome#send_daily_emails'
+  post 'welcome/destroy_all_users' => 'welcome#destroy_all_users'
 
+  #omniauth routes
+  # get '/auth/:provider/callback' => 'session#create'
+  get '/auth/github/callback' => 'session#create', :as => :signin
+  get '/signout' => 'session#destroy', :as => :signout
+
+#did not use these routes for omniauth
+  # get '/signin' => 'sessions#new', :as => :signin
+  # get '/auth/failure' => 'sessions#failure'
+  
   # Example of regular route:
   #   get 'users/:id' => 'catalog#view'
 

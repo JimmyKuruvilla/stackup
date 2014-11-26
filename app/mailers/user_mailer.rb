@@ -2,7 +2,7 @@ class UserMailer < ActionMailer::Base
   default from: 'stackupemail@gmail.com'
     def send_daily_email(user)
       @user = user
-      @question=Question.pick_question(user)#Question.first
+      @question=Question.pick_question(user)
       @user.questions<<@question
       mail(to: @user.email, subject: 'Your Daily Question from StackUp')
     end

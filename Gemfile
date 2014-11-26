@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'omniauth'
+gem 'omniauth-github'
 gem 'dotenv-rails'
 gem 'mail'
 # Bundle edge Rails insqtead: gem 'rails', github: 'rails/rails'

@@ -1,11 +1,3 @@
  <h1>Coder Cred Made Easy.</h1>
-            <p>Receive unanswered Ruby questions from Stack Overflow in your inbox every day.</p>
-<title>StackUp</title>
+  <p>Receive unanswered Ruby questions from Stack Overflow in your inbox every day.</p>
 
-<%= form_for @user do |f| %><br>
-  Please enter your email address:<br>
-   <%= f.text_field :email, placeholder: "username@example.com", autofocus: true %>
-   <%= f.submit "Submit" %>
-<% end %>
-<br>
-Alternatively, feel free to <%= button_to "Spam Our Users", action: "send_daily_emails" %>

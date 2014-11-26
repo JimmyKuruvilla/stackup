@@ -1,2 +1,19 @@
-<p>Welcome to StackUp, <%= @user.email.split("@")[0] %>! </p>
-<p>You can expect your first StackUp email to appear within a day.<p>
+<br>
+<% if current_user.admin %>
+  <h3>Welcome <%= @user.name%>! [Administrator] </h3>
+<% else %>
+  <h3>Welcome <%= @user.name%>! </h3>
+<% end %>
+
+<%= form_for @user do |f| %><br>
+
+  If you'd like to recieve emails at a different address than the one on your GitHub account enter it here: 
+  <%= f.text_field :email, placeholder: "@user.email", autofocus: true %>
+  <%= f.submit "Update" %>
+<% end %>
+<br>
+
+<h4>Unanswered Questions for You </h4>
+<ol>
+<%= render partial: "question", collection: @questions %>
+</ol>
