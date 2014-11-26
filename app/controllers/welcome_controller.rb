@@ -8,6 +8,7 @@ class WelcomeController < ApplicationController
     UserMailer.send_daily_email(user).deliver
     end
     redirect_to root_path, :notice => "Emails sent to all users"
+end
 
   def about
   end

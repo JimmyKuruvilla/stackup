@@ -1,19 +1,24 @@
-<br>
+
 <% if current_user.admin %>
-  <h3>Welcome <%= @user.name%>! [Administrator] </h3>
+<h2 class="col-md-8 extra-top">Welcome <%= @user.name%>! [Administrator] </h2>
 <% else %>
-  <h3>Welcome <%= @user.name%>! </h3>
+<h2 class="col-md-8 extra-top">Welcome <%= @user.name%>! </h2>
 <% end %>
 
-<%= form_for @user do |f| %><br>
 
-  If you'd like to recieve emails at a different address than the one on your GitHub account enter it here: 
+<div class="text-right container-fluid col-md-12">
+  <%= form_for @user do |f| %><br>
+    <p>If you'd like to recieve emails at an address other than the<br>one listed on your GitHub account, please enter it here: </p><br>
   <%= f.text_field :email, placeholder: "@user.email", autofocus: true %>
   <%= f.submit "Update" %>
-<% end %>
-<br>
+  <% end %>
 
-<h4>Unanswered Questions for You </h4>
-<ol>
+</div>
+
+<div class="col-md-12">
+<h4 class="text-left">These questions need your answers:</h4>
+<ol class="text-left">
 <%= render partial: "question", collection: @questions %>
 </ol>
+
+</div>
