@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   #omniauth routes
   # get '/auth/:provider/callback' => 'session#create'
-  get 'auth/github/callback' => 'session#create', :as => :signin
+  get 'auth/github/callback' => 'session#create'
   get '/signout' => 'session#destroy', :as => :signout
 
 #did not use these routes for omniauth
