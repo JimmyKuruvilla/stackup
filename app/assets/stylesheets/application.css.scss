@@ -13,6 +13,7 @@
 
  *= require bootstrap
  *= require bootstrap.min
+ *= require jquery-ui
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
@@ -24,8 +25,70 @@
 
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
+/*These two mimic the themes styling for the admin buttons*/
+input:hover { 
+    color: #FFF;
+}
+input{
+  padding-top:15px;
+  float: right;
+  color: #9d9d9d;
+  background-color: inherit;
+  border: 0px;
+}
+/**/
 
 .notice {
     color: red;
+    display: none;
 }
 
+.row{
+  display: none;
+}
+
+html{
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 100%;
+  background-color: black;
+/*  background: url(trees.jpg)*/
+}
+
+.page {
+  background-color: white;
+  height: 100%;
+}
+
+nav {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.centered {
+  padding-top: 50px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.huge{
+  font-size: 250%;
+}
+
+
+
+.redbar{
+  padding-top: 5px;
+  background-color: #FF3300;
+width: 100%;
+}

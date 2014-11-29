@@ -17,6 +17,7 @@ end
   end
   
   def destroy_all_users #and make admins
+    session[:user_id]=nil
     User.destroy_all
     User.create(id: 1, email: "jimmy.kuruvilla@flatironschool.com", created_at: "2014-11-26 04:15:53", updated_at: "2014-11-26 04:16:22", uid: "7905473", name: "Jimmy Kuruvilla", admin: true)
     User.create(id: 4, email: "seemashariat@gmail.com", created_at: "2014-11-26 17:16:06", updated_at: "2014-11-26 17:16:06", uid: "2113081", name: "seema shariat", admin: true)

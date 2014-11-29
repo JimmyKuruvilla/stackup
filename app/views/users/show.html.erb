@@ -1,10 +1,14 @@
-
 <% if current_user.admin %>
-<h2 class="col-md-8 extra-top">Welcome <%= @user.name%>! [Administrator] </h2>
-<% else %>
-<h2 class="col-md-8 extra-top">Welcome <%= @user.name%>! </h2>
+<div class="redbar">
+ADMIN
+</div>
 <% end %>
 
+<h2 >Welcome <%= @user.name%> </h2>
+
+  <% if flash[:notice] %>
+      <a><div class="notice"><%= flash[:notice] %></div></a>
+  <% end %>
 
 <div class="text-right container-fluid col-md-12">
   <%= form_for @user do |f| %><br>

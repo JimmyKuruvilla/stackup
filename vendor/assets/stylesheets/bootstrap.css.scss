@@ -282,9 +282,7 @@ th {
   color: #666;
   font-weight: lighter;
 }
-.extra-top {
-  padding-top: 5%;
-}
+
 
 .logo-stack-font {
   font-family: Raleway;
@@ -5577,7 +5575,8 @@ button.close {
   display: inline-block;
   float: left;
   width: 25%;
-  border: 1px solid #555;
+  height: 500px;
+  border: 5px solid #555;
   margin: 3%;
 }
 

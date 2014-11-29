@@ -13,13 +13,22 @@ class UsersController < ApplicationController
 
   def update
     @user=User.find(params[:id])
-    @user.update(email: params[:user][:email])
-    if User.find(params[:id]).email==params[:user][:email]
-      message="Updated email to #{params[:user][:email]}"
-    else
-      message="Please enter a valid email address"
+    if params[:user][:email] ==""
+      @user.destroy
+      session[:user_id]=nil
+      message="You have been unsubscribed from the list"
+      redirect_to root_path, notice: message
+    else    
+
+      @user.update(email: params[:user][:email])
+      if User.find(params[:id]).email==params[:user][:email]
+        message="Updated email to #{params[:user][:email]}"
+      else
+        message="Please enter a valid email address"
+      end
+        redirect_to @user, notice: message
     end
-    redirect_to @user, notice: message
+    
   end
 
 

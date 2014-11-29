@@ -1,13 +1,59 @@
-  <title>About</title>
-  <h1>What is StackUp?</h1>
-  <div class="container-fluid col-md-pull-1">
-    <ul class="text-left">
-     <h3 class="lighter-text"> <li>StackUp is a web-based solution providing integration with Stack Overflow. StackUp enables users to seamlessly build coder credit by receiving up-to-date, unanswered questions on a daily basis in their inbox.</li>
+<h1>About StackUp</h1>
+  
+<ul class="text-left">
+    
+<div id="accordion">
+<h2>What is it?</h2>
+<div class="indent">
+StackUp allows you register an emailaddress, and recive daily emails with questions the StackUp team has decided are suitable for newer developers. The questions are selected based on data provided by the Stack Overflow API and attempt to guarantee the following:
+<ol>
+  <li>Each question must be appropriate to a new developer's level of knowledge</li>
+  <li>Each question must not have been answered at the time the daily email is sent</li>
+  <li>While possible each user must recieve a unique question from each other user so that users of StackUp don't canibalize their own opportunities to answer questions</li>
+  <li>While possible each user must only recieve questions they have not previously been sent</li>
 
-      <li>StackUp has built-in algorithms, enhancing user experience through automating the question selection process and providing users custom-picked questions to meet their qualifications.</li>
+</ol>
+</div>
 
-      <li>Through streamlining the process of answering questions posted to Stack Overflow, StackUp increases the likelihood of questions receiving answers, significantly adding points to users' reputation, while also improving the coding community in general.</li>
-      <li> StackUp is powered by Ruby on Rails, and utilizes Action Mailer for many of its automated tasks, such as email digest functionality.</li>
-   </h3>
-  </ul>
-  </div>
+<h2>Why build it?</h2>
+<div class="indent">
+  This project was started because it seemed like an interesting idea, and because it seemed like it would have practical applications during our final weeks at The Flatiron School. 
+</div>
+
+<h2>How does it work?</h2>
+<div class="indent">
+Deciding which questions were easy and which were hard was not as straightforward as we initially thought. In fact, even assuming the knowledge level across new developers was very similar, it is still difficult to separate "easy" from "hard" questions. Our alogorithm attempts to make smart judgements about question difficulty and provide a first cut of results for user review. It does this by looking for the following:
+1. questions without answers
+2. Questions without 
+
+StackUp is hosted on Heroku, Ruby on Rails powers the server side, JQuery is helping streamline the client side interactions, and GitHub's omniauth service is used for user authentication and registration. 
+</div>
+
+<h2>Who made it?</h2>
+<div class="indent">
+StackUp is a project built by three students at The Flatiron School's web immersive course in NYC, NY. It's goal is to allow newer developers to streamline one part of the process of building an online presence with Stack Overflow. 
+</div>
+
+<h2>Why can't I select questions other than Ruby/Rails?</h2>
+<div class="indent">
+It would be great to be able to send users customized question sets. However the way Stack Overflow allows users to tag questions meant that tags were not always useful in determining content or difficulty. In the interests of time and creating something of use to us, this feature was shelved in favor of completing the rest of the project.
+</div>
+
+<h2>Where can I look at your code?</h2>
+<div class="indent">
+<%= link_to "Follow the project on GitHub", "http://github.com/JimmyKuruvilla/stackup", :target => "_blank" %>
+</div>
+
+</div>
+</ul>
+
+
+
+
+
+
+  
+
+
+
+

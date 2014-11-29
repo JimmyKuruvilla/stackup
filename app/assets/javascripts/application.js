@@ -10,8 +10,20 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
+//= require jquery-ui
 //= require bootstrap.min
 //= require jquery_ujs
 //= require bootstrap
+
 //= require_tree .
+
+$(document).ready(function(){
+  $('.row').fadeIn(850)
+  $('.notice').fadeIn(200)
+  $('.notice').fadeOut(4000)
+  $( "#accordion" ).accordion()
+});
+
+

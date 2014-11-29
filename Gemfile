@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
+
+gem 'jquery-ui-rails'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'dotenv-rails'
