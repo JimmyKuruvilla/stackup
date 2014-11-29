@@ -1,28 +1,37 @@
+
+
 <% if current_user.admin %>
 <div class="redbar">
 ADMIN
 </div>
 <% end %>
 
+<div class="pad-left">
 <h2 >Welcome <%= @user.name%> </h2>
 
   <% if flash[:notice] %>
-      <a><div class="notice"><%= flash[:notice] %></div></a>
+      <a><div class="notice text-left"><%= flash[:notice] %></div></a>
   <% end %>
 
-<div class="text-right container-fluid col-md-12">
   <%= form_for @user do |f| %><br>
-    <p>If you'd like to recieve emails at an address other than the<br>one listed on your GitHub account, please enter it here: </p><br>
+    <ul>
+    <li>If you'd like to recieve emails at an address other than the one listed on your GitHub account, enter it here: 
+  </li>
+  <li>
+    To unsubscribe from all emails, leave this box empty and press update. 
+  </li>
+    </ul>
   <%= f.text_field :email, placeholder: "@user.email", autofocus: true %>
   <%= f.submit "Update" %>
   <% end %>
+<br>
+<br>
+<br>
 
-</div>
-
-<div class="col-md-12">
-<h4 class="text-left">These questions need your answers:</h4>
-<ol class="text-left">
+<h4 >These questions need your answers:</h4>
+<ol >
 <%= render partial: "question", collection: @questions %>
 </ol>
 
+</div>
 </div>

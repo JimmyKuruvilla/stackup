@@ -2,3 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.pad-left{
+  padding-left: 2%;
+}
+
+.float-left{
+  float:left;
+}
+#user_email,
+#edit_user_1 > input[type="submit"]:nth-child(5){
+  padding-top:15px;
+  float:left;
+  color: #000;
+  background-color: inherit;
+  border: 0px;
+}
+
+
+textarea:focus, input:focus{
+  padding-left: 3%;
+    outline: 0;
+    height: 20px;
+width: 400px;
+}
