@@ -36,7 +36,13 @@ input{
   background-color: inherit;
   border: 0px;
 }
-/**/
+.span4-left {
+  float: left;
+  margin-left: 6.5%;
+
+    width: 25%;
+
+}
 
 .notice {
     color: red;
@@ -45,6 +51,8 @@ input{
 
 .row{
   display: none;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 html{
@@ -55,24 +63,26 @@ body {
   padding-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 60%;
   height: 100%;
   background-color: black;
 /*  background: url(trees.jpg)*/
 }
 
-.page {
-  background-color: white;
-  height: 100%;
-  padding-left: 2.5%;
-  padding-right: 5%;
-}
-
 nav {
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 60%;
 }
+
+.page {
+  background-color: white;
+  height: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+
 
 .centered {
   padding-top: 50px;

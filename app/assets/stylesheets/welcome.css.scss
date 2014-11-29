@@ -8,9 +8,11 @@
 
 body > div > div > div > div > div > a > img{
   padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   color: #000;
   height:auto;
-  width:auto;
+  width:100%;
   max-width:300px;
 }
 /*octocat*/
@@ -21,3 +23,4 @@ body > div > div > div > div > a > img{
 .indent {
  margin-left: 2%;
 }
+
