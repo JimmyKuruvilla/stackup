@@ -32,6 +32,9 @@
                          <%= link_to "Team", team_path %>
                     </li>
                     <li>
+                         <%= link_to "My StackUp", @user %>
+                    </li>
+                    <li>
                         <% if current_user %>
                             <%= link_to "Log Out #{current_user.name} ", "/signout" %>
                         <% end %>

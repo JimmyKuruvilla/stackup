@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @user=User.new
+    @user=current_user
   end
 
   def send_daily_emails
@@ -11,9 +11,11 @@ class WelcomeController < ApplicationController
 end
 
   def about
+    @user=current_user
   end
 
   def team
+    @user=current_user
   end
   
   def destroy_all_users #and make admins
