@@ -27,3 +27,6 @@ $(document).ready(function(){
 });
 
 
+function submitAdminForm(){
+  $('#admin_actions').submit();
+};

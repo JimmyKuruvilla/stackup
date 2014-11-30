@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   resources :users
 
-  post 'welcome/send_daily_emails' => 'welcome#send_daily_emails'
-  post 'welcome/destroy_all_users' => 'welcome#destroy_all_users'
+  post 'welcome/admin_actions' => 'welcome#admin_actions'
+
 
   #omniauth routes
   # get '/auth/:provider/callback' => 'session#create'
