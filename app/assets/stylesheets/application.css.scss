@@ -32,8 +32,8 @@
   margin-left: 6.5%;
   border: 5px solid #F3535D;
   width: 25%;
-
 }
+
 
 .notice {
     color: red;
@@ -44,8 +44,24 @@
   display: none;
     margin-left: 0px;
     margin-right: 0px;
+    background-color: white;
+      width: 100%;
+      height: inherit;
 }
 
+.col-lg-12{
+  height: inherit;
+  width: 100%;
+}
+.pad-left{
+    height: inherit;
+  width: 100%;
+}
+
+ol{
+      height: inherit;
+  width: 100%;
+}
 html{
   height: 100%;
 }

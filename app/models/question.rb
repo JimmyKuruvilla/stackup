@@ -13,7 +13,7 @@ class Question < ActiveRecord::Base
     end
   end
 
-  def self.pick_question(user)
+  def self.pick_question(user)#inefficient to loop over all Qs for every pick
     questions_to_send = []
     Question.all.each do |question|
       if !(user.questions.include?(question.id)) && question.difficulty == 1
@@ -21,9 +21,12 @@ class Question < ActiveRecord::Base
       end
     end
     if questions_to_send.empty?
-      Question.first
+      Question.first #doesn't tell the user that he doesn't have any matches, but it's very unlikely
     else
-      questions_to_send.sample
+      question_to_send=questions_to_send.sample
+      user.questions<<question_to_send
+      return question_to_send
+      
     end
   end
 

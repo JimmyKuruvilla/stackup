@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def show
    @user = current_user
-   @questions=Question.all
+   Question.pick_question(@user)
+   @questions=Question.first(10)
   end
 
   def index
