@@ -1,11 +1,4 @@
 
-
-<% if current_user.admin %>
-<div class="redbar">
-ADMIN
-</div>
-<% end %>
-
 <div class="pad-left">
 <h2 >Welcome <%= @user.name%> </h2>
 
@@ -15,15 +8,18 @@ ADMIN
 
   <%= form_for @user do |f| %><br>
     <ul>
-    <li>If you'd like to recieve emails at an address other than the one listed on your GitHub account, enter it here: 
+    <li>If you'd like to recieve emails at an address other than the one listed on your GitHub account, enter it below
   </li>
   <li>
     To unsubscribe from all emails, leave this box empty and press update. 
   </li>
-    </ul>
+
   <%= f.text_field :email, placeholder: "@user.email", autofocus: true %>
   <%= f.submit "Update" %>
   <% end %>
+
+    </ul>
+
 <br>
 <br>
 <br>
