@@ -20,13 +20,13 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('.row').fadeIn(850)
-  $('.notice').fadeIn(200)
-  $('.notice').fadeOut(4000)
-  $( "#accordion" ).accordion()
-});
-
+  $('#ajax-page').fadeIn(850)
 
 function submitAdminForm(){
   $('#admin_actions').submit();
 };
+
+});
+
+
+

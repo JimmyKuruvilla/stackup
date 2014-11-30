@@ -1,0 +1,4 @@
+$('#ajax-page').hide();
+$("#ajax-page").html("<%= escape_javascript(render :template => 'welcome/team.html.erb') %>");
+$('#ajax-page').fadeIn(850);
+

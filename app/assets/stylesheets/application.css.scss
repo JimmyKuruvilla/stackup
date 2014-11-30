@@ -90,7 +90,7 @@ select{
 }
 
 .row{
-  display: none;
+
     margin-left: 0px;
     margin-right: 0px;
     background-color: white;
@@ -106,3 +106,9 @@ select{
     height: inherit;
   width: 100%;
 }
+
+/*necessary for initial page load fade effect, not for link effects*/
+#ajax-page{
+    display: none;
+}
+

@@ -2,11 +2,10 @@
 <div class="pad-left">
 <h2 >Welcome <%= @user.name%> </h2>
 
-  <% if flash[:notice] %>
-      <a><div class="notice text-left"><%= flash[:notice] %></div></a>
-  <% end %>
+  <a><div class="notice text-left"></div></a>
 
-  <%= form_for @user do |f| %><br>
+  <%= form_for(@user, remote: true) do |f| %><br>
+
     <ul>
     <li>If you'd like to recieve emails at an address other than the one listed on your GitHub account, enter it below
   </li>

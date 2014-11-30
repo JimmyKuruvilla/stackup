@@ -2,7 +2,6 @@ class SessionController < ApplicationController
 
   def create     
     auth = request.env["omniauth.auth"]     
-    puts auth
     if User.find_by(uid: auth["uid"])==nil
       message="You can expect your first StackUp email to appear within 24 hours"
     end
