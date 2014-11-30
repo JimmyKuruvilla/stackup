@@ -27,13 +27,62 @@
 /* Some Style from the Bootstrap Default Theme */
 /*These two mimic the themes styling for the admin buttons*/
 
+
+ol{
+      height: inherit;
+  width: 100%;
+}
+html{
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 100%;
+  background-color: black;
+  background: url(circuit.jpg)
+}
+
+nav {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+select{
+  color: #000;
+  background-color: #F3535D ;
+}
+.page {
+  background-color: white;
+  height: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.centered {
+  padding-top: 50px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.huge{
+  font-size: 250%;
+}
+
 .span4-left {
   float: left;
   margin-left: 6.5%;
   border: 5px solid #F3535D;
   width: 25%;
 }
-
 
 .notice {
     color: red;
@@ -56,57 +105,4 @@
 .pad-left{
     height: inherit;
   width: 100%;
-}
-
-ol{
-      height: inherit;
-  width: 100%;
-}
-html{
-  height: 100%;
-}
-
-body {
-  padding-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  height: 100%;
-  background-color: black;
-/*  background: url(trees.jpg)*/
-}
-
-nav {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-}
-
-.page {
-  background-color: white;
-  height: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-
-
-.centered {
-  padding-top: 50px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-}
-
-.huge{
-  font-size: 250%;
-}
-
-
-select{
-  color: #000;
-  background-color: #F3535D ;
 }
