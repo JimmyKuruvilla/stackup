@@ -43,6 +43,7 @@
 
 
                     <li>
+                    <% if current_user && current_user.admin %>
                           <%= form_tag("/welcome/admin_actions", id: "admin_actions", method: "post") do %>
                           <% end %>
                           
@@ -51,6 +52,7 @@
                             <option value="rde">Resend Daily Email</option>
                             <option value="dauara">Destroy All Users and Recreate Admins</option>
                           </select>
+                    <% end %>
                     </li>
                 </ul>
             </div>

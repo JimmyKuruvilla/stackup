@@ -4,10 +4,12 @@ class UsersController < ApplicationController
   end
 
   def show
-   @user = current_user
-   Question.pick_question(@user)
-   @questions=Question.first(10)
-  end
+    @questions=[]
+    @user = current_user
+      10.times do 
+        @questions<<Question.pick_question(@user)
+      end
+    end
 
   def index
     @user = current_user
