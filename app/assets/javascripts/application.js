@@ -22,11 +22,11 @@
 $(document).ready(function(){
   $('#ajax-page').fadeIn(850)
 
-function submitAdminForm(){
-  $('#admin_actions').submit();
-};
+
 
 });
 
 
-
+function submitAdminForm(){
+  $('#admin_actions').submit();
+};

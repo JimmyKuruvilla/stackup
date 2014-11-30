@@ -44,7 +44,7 @@
 
                     <li>
                     <% if current_user && current_user.admin %>
-                          <%= form_tag("/welcome/admin_actions", id: "admin_actions", method: "post") do %>
+                          <%= form_tag("/welcome/admin_actions", id: "admin_actions", method: "post", remote: true) do %>
                           <% end %>
                           
                           <select name="admin_actions" form="admin_actions" onchange="submitAdminForm()">
