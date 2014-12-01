@@ -12,7 +12,7 @@
 //
 
 //= require jquery
-//= require jquery-ui
+//= require jquery-ui/accordion
 //= require bootstrap.min
 //= require jquery_ujs
 //= require bootstrap
