@@ -22,7 +22,8 @@
 $(document).ready(function(){
   $('#ajax-page').fadeIn(850)
 
-
+$('.notice').fadeIn(200)
+$('.notice').fadeOut(4000)
 
 });
 

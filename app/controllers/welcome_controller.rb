@@ -22,8 +22,8 @@ class WelcomeController < ApplicationController
           session[:user_id]=nil
           User.destroy_all
           User.create(id: 1, email: "jimmy.kuruvilla@flatironschool.com", created_at: "2014-11-26 04:15:53", updated_at: "2014-11-26 04:16:22", uid: "7905473", name: "Jimmy Kuruvilla", admin: true)
-          # User.create(id: 4, email: "seemashariat@gmail.com", created_at: "2014-11-26 17:16:06", updated_at: "2014-11-26 17:16:06", uid: "2113081", name: "seema shariat", admin: true)
-          # User.create(id: 5, email: "doneallison@gmail.com", created_at: "2014-11-26 17:18:09", updated_at: "2014-11-26 17:18:09", uid: "3227364", name: "Don Allison", admin: true)
+          User.create(id: 2, email: "seemashariat@gmail.com", created_at: "2014-11-26 17:16:06", updated_at: "2014-11-26 17:16:06", uid: "2113081", name: "Seema Shariat", admin: true)
+          User.create(id: 3, email: "doneallison@gmail.com", created_at: "2014-11-26 17:18:09", updated_at: "2014-11-26 17:18:09", uid: "3227364", name: "Don Allison", admin: true)
           message="All users destroyed, and admins recreated"
 
         elsif params[:admin_actions]=="rde"
