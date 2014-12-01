@@ -22,9 +22,14 @@ StackUp allows you register an emailaddress, and recive daily emails with questi
 
 <h2>How does it work?</h2>
 <div class="indent">
-Deciding which questions were easy and which were hard was not as straightforward as we initially thought. In fact, even assuming the knowledge level across new developers was very similar, it is still difficult to separate "easy" from "hard" questions. Our alogorithm attempts to make smart judgements about question difficulty and provide a first cut of results for user review. It does this by looking for the following:
-1. questions without answers
-2. Questions without 
+StackUp is powered by an algorithm that tries to differentiate between "easy" and "hard" questions based on the tags appended to a question, the overall length of a question, and the proportion of a question that consists of code. The algorithm is based on the following assumptions:
+<ul>
+<li>Questions with a single, general tag (e.g., "Ruby") are easier than questions with multiple, specific tags (e.g., "Ruby", "Ruby on Rails", "SQL", "JavaScript")</li>
+<li>Short questions are easier than long questions</li>
+<li>Questions with little code are easier than questions with lots of code</li>
+</ul>
+These assumptions, of course, do not always hold. Long questions with multiple tags and extensive code snippets may be resolved by a single line of code, while brief, codeless questions may harbor abstruse questions on language design. Still, the algorithm has been relatively effective at identifying the small number of "easy" questions available on Stack Overflow at any given time. In the future, the StackUp team hopes to train a classifier algorithm with labeled examples to improve StackUp's ability to deliver questions calibrated to a user's preferred level of difficulty.
+
 
 StackUp is hosted on Heroku, Ruby on Rails powers the server side, JQuery is helping streamline the client side interactions, and GitHub's omniauth service is used for user authentication and registration. 
 </div>
@@ -46,12 +51,3 @@ It would be great to be able to send users customized question sets. However the
 
 </div>
 </ul>
-
-<div class="text-center">
-<td>
-  <tr class="col-xs-1"><%= image_tag "inbox.png" %></tr>
-  <tr class="col-xs-1"><%= image_tag "algorithm.png" %></tr>
- <tr class="col-xs-1"><%= image_tag "devs.png" %></tr>
- <tr class="col-xs-1"><%= image_tag "rails.png" %></tr>
-</td>
-</div>
