@@ -43,7 +43,8 @@ body {
   width: 60%;
   height: 100%;
   background-color: black;
-  background: url(circuit.jpg)
+  background: url(circuit.jpg);
+  background-repeat: repeat-x;
 }
 
 nav {
@@ -107,6 +108,10 @@ select{
   width: 100%;
 }
 
+footer{
+  width: 100%;
+  background-color: #F3535D;
+}
 /*necessary for initial page load fade effect, not for link effects*/
 #ajax-page{
     display: none;
